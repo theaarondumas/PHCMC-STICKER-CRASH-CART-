@@ -12,7 +12,7 @@
 <header class="topbar">
   <div>
     <div class="brand-title">Crash Cart Digital Stickers</div>
-    <div class="brand-sub">Live labels • auto-save • print-ready • QR + audit log</div>
+    <div class="brand-sub">Live labels • auto-save • print-ready</div>
   </div>
   <div class="actions">
     <button id="btnPrint" class="btn">Print / Export PDF</button>
@@ -22,11 +22,11 @@
 
 <main class="wrap">
 
-  <!-- ===== STICKERS + QR ===== -->
+  <!-- ===== STICKERS ===== -->
   <section class="preview">
 
     <!-- YELLOW SUPPLY STICKER -->
-    <div class="sticker sticker-yellow" id="stickerYellow">
+    <div class="sticker sticker-yellow">
       <div class="facility">
         <div id="sFacility">Providence</div>
         <div id="sHospital">Holy Cross Hospital</div>
@@ -40,15 +40,10 @@
       <div class="row"><b>Date:</b><span id="sExpireDate">—</span></div>
       <div class="row"><b>Check Date done:</b><span id="sCheckDate">—</span></div>
       <div class="row"><b>CS tech:</b><span id="sTech">—</span></div>
-
-      <div class="mini-meta">
-        <div><b>Cart ID:</b> <span id="sCartId">—</span></div>
-        <div><b>Location:</b> <span id="sLocation">—</span></div>
-      </div>
     </div>
 
     <!-- ORANGE MED STICKER -->
-    <div class="sticker sticker-orange" id="stickerOrange">
+    <div class="sticker sticker-orange">
       <h2>Crash Cart Check</h2>
 
       <div class="row"><b>First Drug to Exp:</b><span id="mExpire">—</span></div>
@@ -56,80 +51,28 @@
       <div class="row"><b>Lock Number:</b><span id="mLock">—</span></div>
       <div class="row"><b>Check done on:</b><span id="mDate">—</span></div>
       <div class="row"><b>Initials:</b><span id="mInit">—</span></div>
-
-      <div class="mini-meta">
-        <div><b>Cart ID:</b> <span id="mCartId">—</span></div>
-        <div><b>Location:</b> <span id="mLocation">—</span></div>
-      </div>
-    </div>
-
-    <!-- QR PANEL -->
-    <div class="panel qrpanel">
-      <h2>QR Code (scan the cart)</h2>
-      <div class="qrgrid">
-        <div class="qrbox">
-          <img id="qrImg" alt="QR Code" />
-          <div class="qrhint">Scan → opens this sticker with the current cart values.</div>
-          <div class="qrurl" id="qrUrl">—</div>
-          <button id="btnCopyLink" class="btn btn-ghost">Copy Link</button>
-        </div>
-
-        <div class="qrfields">
-          <div class="field">
-            <label for="cartId">Cart ID</label>
-            <input id="cartId" placeholder="ER-CRASH-01" />
-          </div>
-          <div class="field">
-            <label for="location">Location</label>
-            <input id="location" placeholder="ED • Trauma Bay / Room # / Unit" />
-          </div>
-
-          <div class="panel-actions">
-            <button id="btnLog" class="btn">Log Update (Audit)</button>
-            <button id="btnExportCSV" class="btn btn-ghost">Export History CSV</button>
-          </div>
-
-          <div class="statusline">
-            <span class="status" id="status">Saved</span>
-            <span class="status subtle" id="logStatus">—</span>
-          </div>
-        </div>
-      </div>
     </div>
 
   </section>
 
   <!-- ===== INPUTS ===== -->
   <section class="panel">
-    <h2>Supply Sticker Inputs</h2>
-
-    <div class="inputs">
-      <input id="firstSupply" placeholder="TEMP PACING CATH KIT">
-      <input id="expireDate" type="date">
-      <input id="checkDate" type="date">
-      <input id="tech" placeholder="CS Tech Name">
-    </div>
+    <h2>Supply Sticker</h2>
+    <input id="firstSupply" placeholder="TEMP PACING CATH KIT">
+    <input id="expireDate" type="date">
+    <input id="checkDate" type="date">
+    <input id="tech" placeholder="CS Tech Name">
 
     <hr>
 
-    <h2>Medication Sticker Inputs</h2>
+    <h2>Medication Sticker</h2>
+    <input id="medExpire" placeholder="5/31/26">
+    <input id="medDrug" placeholder="EPINEPHRINE">
+    <input id="medLock" placeholder="273947">
+    <input id="medDate" type="date">
+    <input id="medInit" placeholder="AD">
 
-    <div class="inputs">
-      <input id="medExpire" placeholder="5/31/26 (or type date text)">
-      <input id="medDrug" placeholder="EPINEPHRINE">
-      <input id="medLock" placeholder="Lock #">
-      <input id="medDate" type="date">
-      <input id="medInit" placeholder="Initials">
-    </div>
   </section>
-
-  <!-- ===== HISTORY ===== -->
-  <section class="panel">
-    <h2>History (last 50)</h2>
-    <div class="hint">Tap a row to restore that snapshot.</div>
-    <div id="historyList" class="history"></div>
-  </section>
-
 </main>
 
 <script src="app.js"></script>
