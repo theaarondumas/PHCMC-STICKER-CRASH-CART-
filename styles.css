@@ -1,231 +1,85 @@
-:root{
-  --bg:#0b0c10;
-  --panel:#11161d;
-  --text:#eaf0f6;
-  --muted:#a9b7c6;
-  --line:#263241;
-
-  --btn:#1f2a36;
-  --btnText:#eaf0f6;
-
-  --yellow:#d7ea00; /* sticker yellow */
-  --yellowBorder:#a6b400;
-
-  --paperShadow: 0 12px 30px rgba(0,0,0,.35);
-}
-
-*{ box-sizing:border-box; }
-html,body{ height:100%; }
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
-  background: radial-gradient(1200px 600px at 20% 0%, #12202b 0%, var(--bg) 60%);
-  color:var(--text);
+  background:#0b0c10;
+  color:#fff;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
 }
 
 .topbar{
-  position:sticky;
-  top:0;
-  z-index:5;
-  padding:14px 16px;
-  background: rgba(10,14,18,.86);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:14px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:14px;
+  align-items:center;
+  background:#0e141b;
 }
-
-.brand-title{ font-weight:800; letter-spacing:.2px; }
-.brand-sub{ color:var(--muted); font-size:12px; margin-top:2px; }
-
-.actions{ display:flex; gap:10px; align-items:center; }
 
 .btn{
-  border:1px solid rgba(255,255,255,.10);
-  background: var(--btn);
-  color: var(--btnText);
-  padding:10px 12px;
-  border-radius:12px;
+  padding:10px 14px;
+  border-radius:10px;
+  border:none;
+  background:#1f2a36;
+  color:#fff;
   font-weight:700;
-  cursor:pointer;
-}
-.btn:active{ transform: translateY(1px); }
-.btn-ghost{
-  background: transparent;
-  border:1px solid rgba(255,255,255,.16);
 }
 
-.wrap{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px 16px 40px;
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
+.btn-ghost{ background:#000; border:1px solid #333; }
+
+.wrap{ padding:16px; max-width:900px; margin:auto; }
 
 .preview{
   display:grid;
-  grid-template-columns: 1fr;
-  gap:14px;
-}
-
-@media(min-width: 860px){
-  .preview{
-    grid-template-columns: 520px 1fr;
-    align-items:start;
-  }
+  gap:20px;
 }
 
 .sticker{
-  width:100%;
-  max-width:520px;
   border-radius:6px;
-  box-shadow: var(--paperShadow);
-  overflow:hidden;
+  padding:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
 }
 
 .sticker-yellow{
-  background: var(--yellow);
-  border:2px solid var(--yellowBorder);
-}
-
-.sticker-top{
-  padding:10px 12px 0;
-  font-size:12px;
-  color:#1a1a1a;
-}
-
-.facility-line{ line-height:1.15; }
-.sticker-title{
-  padding:6px 12px 10px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-.title-text{
+  background:#d7ea00;
   color:#111;
-  font-weight:900;
-  letter-spacing:1px;
-  font-size:28px;
 }
 
-.sticker-body{
-  padding: 0 12px 12px;
-  color:#161616;
-  font-size:14px;
+.sticker-orange{
+  background:#ff8c1a;
+  color:#111;
+}
+
+.sticker h1, .sticker h2{
+  text-align:center;
+  margin:10px 0;
 }
 
 .row{
-  display:grid;
-  grid-template-columns: 180px 1fr;
-  gap:10px;
+  display:flex;
+  justify-content:space-between;
+  border-top:1px solid rgba(0,0,0,.2);
   padding:6px 0;
-  border-top:1px solid rgba(0,0,0,.18);
-}
-.row:first-child{ border-top:1px solid rgba(0,0,0,.24); }
-
-.label{
-  font-weight:700;
-  color:#1a1a1a;
-}
-
-.value{
-  min-height:18px;
-}
-
-.handwritten{
-  font-family: "Bradley Hand", "Comic Sans MS", "Segoe Print", "Apple Chancery", cursive;
+  font-family:"Bradley Hand","Comic Sans MS",cursive;
   font-size:16px;
-  font-weight:700;
-  letter-spacing:.2px;
 }
-
-.sticker-footer{
-  padding:8px 12px 10px;
-  border-top:1px solid rgba(0,0,0,.18);
-  color:#1a1a1a;
-  font-size:11px;
-}
-
-.helper{ display:flex; }
-.helper-card{
-  background: rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;
-  padding:14px;
-  width:100%;
-}
-.helper-title{ font-weight:800; margin-bottom:6px; }
-.helper-text{ color: var(--muted); line-height:1.45; }
 
 .panel{
-  background: var(--panel);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
+  background:#11161d;
   padding:16px;
-}
-
-.panel h2{
-  margin:0 0 12px;
-  font-size:16px;
-  letter-spacing:.2px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:12px;
-}
-
-@media(min-width: 860px){
-  .grid{ grid-template-columns: repeat(4, 1fr); }
-  .field-wide{ grid-column: span 2; }
-}
-
-.field label{
-  display:block;
-  font-size:12px;
-  color: var(--muted);
-  margin-bottom:6px;
-}
-
-.field input, .field select{
-  width:100%;
-  padding:12px 12px;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,.10);
+  margin-top:20px;
+}
+
+.panel input{
+  width:100%;
+  margin-bottom:10px;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #333;
   background:#0c1117;
-  color: var(--text);
-  outline:none;
+  color:#fff;
 }
 
-.hint{
-  margin-top:6px;
-  font-size:12px;
-  color: var(--muted);
-}
-
-.panel-actions{
-  margin-top:14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.status{
-  font-size:12px;
-  color: var(--muted);
-}
-
-/* PRINT: print ONLY the sticker */
 @media print{
   body{ background:#fff; }
-  .topbar, .panel, .helper{ display:none !important; }
-  .wrap{ padding:0; }
-  .preview{ grid-template-columns: 1fr; }
-  .sticker{ box-shadow:none; margin: 12mm auto; }
+  .panel,.topbar{ display:none; }
+  .sticker{ box-shadow:none; }
 }
