@@ -1,1 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0c10" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Crash Cart Digital Sticker</title>
+</head>
 
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-title">Crash Cart Digital Sticker</div>
+      <div class="brand-sub">On-screen label + form below • saves automatically</div>
+    </div>
+
+    <div class="actions">
+      <button id="btnPrint" class="btn">Print / Export PDF</button>
+      <button id="btnReset" class="btn btn-ghost">Clear</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- DIGITAL STICKER PREVIEW -->
+    <section class="preview">
+      <div class="sticker sticker-yellow" id="sticker">
+        <div class="sticker-top">
+          <div class="facility">
+            <div class="facility-line" id="sFacility">Providence</div>
+            <div class="facility-line" id="sHospital">Holy Cross Hospital</div>
+            <div class="facility-line" id="sDept">Central Department</div>
+            <div class="facility-line" id="sPhone">818-496-1190</div>
+          </div>
+        </div>
+
+        <div class="sticker-title">
+          <div class="title-text">CRASH CART CHECK</div>
+        </div>
+
+        <div class="sticker-body">
+          <div class="row">
+            <div class="label">First supply to expire:</div>
+            <div class="value handwritten" id="sFirstSupply">—</div>
+          </div>
+
+          <div class="row">
+            <div class="label">Date:</div>
+            <div class="value handwritten" id="sExpireDate">—</div>
+          </div>
+
+          <div class="row">
+            <div class="label">Check Date done:</div>
+            <div class="value handwritten" id="sCheckDate">—</div>
+          </div>
+
+          <div class="row">
+            <div class="label">CS tech:</div>
+            <div class="value handwritten" id="sTech">—</div>
+          </div>
+        </div>
+
+        <div class="sticker-footer">
+          <div class="fine">Digital replica • Print for physical label if needed</div>
+        </div>
+      </div>
+
+      <div class="helper">
+        <div class="helper-card">
+          <div class="helper-title">Tip</div>
+          <div class="helper-text">
+            Fill the form below — the sticker updates live. Hit <b>Print / Export PDF</b> to save it.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM (UNDER STICKER) -->
+    <section class="panel">
+      <h2>Sticker Inputs</h2>
+
+      <div class="grid">
+        <div class="field">
+          <label for="facility">Facility</label>
+          <select id="facility">
+            <option value="Providence">Providence</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="hospital">Hospital</label>
+          <select id="hospital">
+            <option value="Holy Cross Hospital">Holy Cross Hospital</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="department">Department</label>
+          <select id="department">
+            <option value="Central Department">Central Department</option>
+            <option value="Emergency Department">Emergency Department</option>
+            <option value="ICU">ICU</option>
+            <option value="Med-Surg">Med-Surg</option>
+            <option value="OR">OR</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" inputmode="tel" placeholder="818-496-1190" />
+        </div>
+
+        <div class="field field-wide">
+          <label for="firstSupply">First supply to expire</label>
+          <input id="firstSupply" type="text" placeholder="e.g., TEMP PACING CATH KIT" />
+          <div class="hint">Keep it short like the real sticker.</div>
+        </div>
+
+        <div class="field">
+          <label for="expireDate">Expiration Date</label>
+          <input id="expireDate" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="checkDate">Check Date Done</label>
+          <input id="checkDate" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="tech">CS Tech</label>
+          <input id="tech" type="text" placeholder="Name / initials" />
+        </div>
+      </div>
+
+      <div class="panel-actions">
+        <button id="btnToday" class="btn">Set Check Date = Today</button>
+        <div class="status" id="status">Saved</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
